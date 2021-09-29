@@ -4,11 +4,9 @@ export type CardDragItem = {
   text: string;
   type: "CARD";
 };
-
 export type ColumnDragItem = {
   id: string;
   text: string;
   type: "COLUMN";
 };
-
 export type DragItem = CardDragItem | ColumnDragItem;

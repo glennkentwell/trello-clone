@@ -19,7 +19,26 @@ export type Action =
         draggedId: string;
         hoverId: string;
       };
+    }
+  | {
+      type: "MOVE_TASK";
+      payload: {
+        draggedItemId: string;
+        hoveredItemId: string | null;
+        sourceColumnId: string;
+        targetColumnId: string;
+      };
     };
+
+export const moveTask = (draggedItemId: string, hoveredItemId: string | null, sourceColumnId: string, targetColumnId: string): Action => ({
+  type: "MOVE_TASK",
+  payload: {
+    draggedItemId,
+    hoveredItemId,
+    sourceColumnId,
+    targetColumnId,
+  },
+});
 
 export const moveList = (draggedId: string, hoverId: string): Action => ({
   type: "MOVE_LIST",
