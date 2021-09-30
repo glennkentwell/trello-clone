@@ -16,4 +16,6 @@ once the front end is running you then want to navigate to trello-backend
 
 then run 
 
+`yarn install`
+
 `yarn start`
