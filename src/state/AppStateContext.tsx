@@ -33,9 +33,14 @@ export const AppStateProvider = withInitialState<AppStateProviderProps>(
       save(state)
     }, [state])
 
-    const { draggedItem, lists } = state
+    let { draggedItem, lists } = state
     const getTasksByListId = (id: string) => {
       return lists.find((list) => list.id === id)?.tasks || []
+    }
+
+    if (lists === undefined) {
+      console.log('lists undefined');
+      lists = [];
     }
 
     return (
